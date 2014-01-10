@@ -1,0 +1,1213 @@
+/*
+Theme Name: Messenger Pigeons
+Theme URI: http://www.messengerpigeons.com
+Author: Messenger Pigeons
+Author URI: http://www.messengerpigeons.com
+Description: A minimal, modern base theme ready to be customized.
+Version: 1.0
+
+*/
+
+
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body {
+	background: #fff;
+	overflow: hidden;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a:focus {
+	outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+	outline: 0;
+}
+a img {
+	border: 0;
+}
+
+/* General
+-------------------------------*/
+
+.extra-margin-bottom {
+	margin-bottom: 30px;
+}
+
+.squish {
+	margin: 0;
+	padding: 0;
+}
+
+.push-right {
+	float: right;
+}
+
+.push-left {
+	float: left;
+}
+
+.pull-up {
+	position: relative;
+	top: -18px;
+}
+
+img.push-left {
+	padding: 0px 10px 10px 0;
+}
+
+.small {
+	font-size: 85%;
+}
+
+.large {
+	font-size: 115%;
+}
+
+.xlarge {
+	font-size: 130%;
+}
+
+.well {
+  min-height: 20px;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #F2F5FC;
+}
+
+.clear {
+	clear: both;
+}
+
+.center {
+	text-align: center;
+}
+
+.space-left {
+	margin-left: 10px
+}
+
+.space-right {
+  margin-right: 10px
+}
+
+.space-top {
+	margin-top: 18px;
+}
+
+.space-bottom {
+	margin-bottom: 10px;
+}
+
+.extra-padding {
+	padding: 20px 0;
+}
+
+.padding-top {
+	padding: 30px 0 0;
+}
+
+.padding-bottom {
+	padding: 0 0 30px;
+}
+
+.hint {
+  color: #666;
+  font-size: 85%;
+}
+
+.right {
+  float: right;
+}
+
+.no-border {
+	border: none;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+
+/* Colors
+-------------------------------*/
+
+.dark-blue {
+	color: #3355b5;
+}
+
+.dark-blue-bg {
+	background: #3355b5;
+}
+
+.light-blue {
+	color: #dbe5fc;
+}
+
+.light-blue-bg {
+	background: #dbe5fc;
+}
+
+.orange {
+	color: #ebac10;
+}
+
+.orange-bg {
+	background: #f9bb1e;
+}
+
+.white {
+	color: #fff;
+}
+
+
+/* Buttons
+------------------------------------------------ */
+
+button,
+input,
+select,
+textarea {
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+
+button,
+input {
+	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.btn {
+	background: #f9bb1e;
+	padding: 6px 16px;
+	border-radius: 4px;
+	font-size: 15px;
+	color: #fff;
+	font-weight: 500;
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: none; /* Corrects inability to style clickable 'input' types in iOS */
+	border: none;
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+}
+
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+.btn:hover {
+	background: #f19900;
+	color: #fff;
+}
+
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active,
+.btn:active,
+.btn.active {
+	background: #ffc636;
+}
+
+.btn.disabled,
+.btn.btn-primary.disabled,
+.btn[disabled],
+.btn.disabled:hover,
+.btn.btn-primary.disabled:hover {
+	background: #aaa;
+}
+
+.btn-warning {
+	background: #EB7738;
+}
+
+/*.btn-warning:hover,*/
+.btn-warning:active,
+.btn-warning.active {
+	background: #EB6238;
+	color: #f8f8f8;
+}
+
+.btn-primary {
+	padding: 12px 18px;
+	font-size: 120%;
+}
+
+.btn-small {
+	font-size: 80%;
+	padding: 4px 8px;
+}
+
+.btn-large {
+	font-size: 130%;
+	padding: 10px 28px;
+}
+
+.btn-xlarge {
+	font-size: 160%;
+	padding: 10px 38px;
+}
+
+
+/* GENERAL USE NAV and NAV-TABS
+------------------------------------------------ */
+.nav {
+  margin-bottom: 20px;
+  list-style: none;
+  clear: both;
+}
+
+.nav > li {
+	list-style: none;
+	float: left;
+	margin-right: 18px;
+}
+
+.nav > li > a {
+  display: block;
+}
+
+.nav > li > a:hover {
+  text-decoration: none;
+}
+
+.nav-tabs {
+  *zoom: 1;
+}
+
+.nav-tabs:before,
+.nav-tabs:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.nav-tabs:after {
+  clear: both;
+}
+
+.nav-tabs > li > a {
+  padding-right: 12px;
+  padding-left: 12px;
+  margin-right: 2px;
+  line-height: 14px;
+  min-width: 20px;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-tabs > li {
+  margin-bottom: -1px;
+	margin-right: 0;
+}
+
+.nav-tabs > li > a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 20px;
+  border: 1px solid transparent;
+  -webkit-border-radius: 4px 4px 0 0;
+     -moz-border-radius: 4px 4px 0 0;
+          border-radius: 4px 4px 0 0;
+}
+
+ul.nav-tabs {
+	margin: 0 5px;
+	padding-left: 15px;
+	border-bottom: none;
+}
+
+ul.nav-tabs li {
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+}
+
+ul.nav-tabs li a:hover {
+	border: 1px solid transparent;
+	background-color: #eeeeee;
+}
+
+
+ul.nav-tabs li a.selected {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-bottom: none;
+}
+
+ul.nav-tabs li a.selected {
+	border-bottom: 2px solid #fff;
+}
+
+.nav.nav-pills > li > a {
+  font-size: 13px;
+  margin-right: 11px;
+  display: inline;
+}
+
+.nav.nav-pills a.active {
+  background: #4BC5FA;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+.nav.nav-pills.condensed a {
+	margin-right: 0px;
+}
+
+.icon-space-left {
+	margin-left: 3px;
+}
+
+/* Block-List
+------------------------------------------------ */
+
+ul.block-list {
+	margin-left: 0;
+	border: 1px solid #ddd;
+}
+
+ul.block-list li {
+	background: #fff;
+	padding: 2%;
+	border-bottom: 1px solid #ddd;
+	width: 96%;
+	min-height: 40px;
+	-webkit-transition: all .1s;
+	transition: all .1s;
+	overflow: hidden;
+	list-style: none;
+}
+
+ul.block-list li:last-child {
+	border-bottom: none;
+}
+
+ul#selectable.block-list li:hover {
+	background: #f5f5f5;
+}
+
+ul#selectable.block-list li.selected {
+	background: #f5f5f5;
+}
+
+ul.no-style {
+	margin-left: 0;
+	list-style: none;
+	border: none;
+}
+
+ul.no-style li {
+	list-style: none;
+}
+
+/* Structure */
+
+.full-width {
+	width: 100%;
+	clear: both;
+}
+
+.container {
+	max-width: 1020px;
+	margin: 0px auto;
+	padding: 0 4%;
+	position: relative;
+}
+
+/*	SELF CLEARING FLOATS - CLEARFIX METHOD */
+.container:after,
+.row:after,
+.col:after,
+.clr:after,
+.group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.row {
+	padding-bottom: 20px;
+}
+
+.row.extra-padding {
+	padding: 40px 0;
+}
+
+.col {
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+
+
+/* =Global
+----------------------------------------------- */
+
+body,
+button,
+input,
+select,
+textarea {
+	color: #272b35;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, Lucida Grande, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+	clear: both;
+	margin: 0 0 10px;
+	color: #3355b5;
+	font-weight: 500;
+}
+
+h1 {
+	font-size: 165%;
+}
+
+h2 {
+	font-size: 150%;
+}
+
+h3 {
+	font-size: 135%;
+}
+
+h4 {
+	font-size: 120%;
+}
+
+h5 {
+	font-size: 110%;
+}
+
+h6 {
+	font-size: 100%;
+}
+
+p+h1, ul+h1,
+p+h2, ul+h2,
+p+h3, ul+h3,
+p+h4, ul+h4,
+p+h5, ul+h5,
+p+h6, ul+h6 {
+	margin-top: 30px;
+}
+
+
+hr {
+	background-color: #ddd;
+	border: 0;
+	height: 1px;
+	margin-bottom: 18px;
+}
+
+/* Text elements */
+p {
+	font-size: 100%;
+	margin-bottom: 18px;
+}
+ul, ol {
+	margin: 0 0 20px 7%;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 4%;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em {
+	font-style: italic;
+}
+blockquote {
+	font-family: georgia, times, serif;
+	font-style: italic;
+	margin: 0 1.5em;
+}
+address {
+	margin: 0 0 1.5em;
+}
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	padding: 1.6em;
+	overflow: auto;
+	max-width: 100%;
+}
+code, kbd, tt, var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}
+figure {
+	margin: 0;
+}
+table {
+	margin: 0 0 20px;
+	width: 100%;
+}
+th {
+	font-weight: bold;
+	border-bottom: 1px solid #ddd;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+label {
+	font-size: 85%;
+	color: #666;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+	padding: 0; /* Addresses excess padding in IE8/9 */
+}
+input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+	-moz-box-sizing:    content-box;
+	box-sizing:         content-box;
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	-webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea {
+	color: #666;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	box-shadow: 0 0 3px rgba(0,0,0,.15);
+	padding: 8px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+textarea {
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+	width: 98%;
+}
+
+/* Links */
+a {
+	color: #ebac10;
+	text-decoration: none;
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #ffb600;
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 2%;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 2%;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+/* Clearing */
+.clear:before,
+.clear:after,
+[class*="content"]:before,
+[class*="content"]:after,
+[class*="site"]:before,
+[class*="site"]:after {
+	content: '';
+	display: table;
+}
+
+.clear:after,
+[class*="content"]:after,
+[class*="site"]:after {
+	clear: both;
+}
+
+
+
+/* =Structure
+----------------------------------------------- */
+
+#page,
+#masthead {
+	border-bottom: 1px solid #ddd;
+}
+
+
+/* =Header
+----------------------------------------------- */
+
+#masthead h1,
+#masthead h2 {
+	margin: 0;
+}
+
+#masthead h2 {
+	font-size: 100%;
+}
+
+
+/* =Footer
+----------------------------------------------- */
+#colophon {
+	font-size: 90%;
+}
+
+#colophon .widget h3 {
+	margin-top: 0;
+}
+
+#colophon .credits {
+	font-size: 80%;
+}
+
+
+/* =Menu
+----------------------------------------------- */
+
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+}
+.main-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+.main-navigation li {
+	float: left;
+	position: relative;
+	margin-left: 2%;
+}
+
+.main-navigation li:first-child {
+	margin-left: 0;
+}
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
+.main-navigation ul ul {
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	display: none;
+	float: left;
+	font-size: 90%;
+	position: absolute;
+		top: 1.5em;
+		left: 0;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	left: 100%;
+	top: 0;
+}
+
+.main-navigation ul ul li {
+	margin-left: 0;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+	padding: 2px 5%;
+}
+
+.main-navigation ul ul li {
+}
+.main-navigation li:hover > a {
+}
+.main-navigation ul ul :hover > a {
+}
+.main-navigation ul ul a:hover {
+}
+.main-navigation ul li:hover > ul {
+	display: block;
+}
+.main-navigation li.current_page_item a,
+.main-navigation li.current-menu-item a {
+}
+
+/* Small menu */
+.menu-toggle {
+	display: none;
+	cursor: pointer;
+}
+
+
+/* =Content
+----------------------------------------------- */
+
+.entry-title {
+	margin-top: 15px;
+}
+
+.sticky {
+}
+.hentry {
+	margin: 0 0 20px;
+}
+.byline,
+.updated {
+	display: none;
+}
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 20px 0 0;
+}
+.page-links {
+	clear: both;
+	margin: 0 0 20px;
+}
+
+.entry-meta {
+	font-size: 80%;
+	color: #888;
+}
+
+.entry-header .entry-meta {
+	margin-top: -14px;
+}
+
+/* =Asides
+----------------------------------------------- */
+
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+
+/* =Media
+----------------------------------------------- */
+
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+.wp-caption {
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 1.2% auto 0;
+	max-width: 98%;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 80%;
+	padding: 3%;
+	color: #888;
+	margin-bottom: 0;
+}
+
+.site-content .gallery {
+	margin-bottom: 20px;
+}
+.gallery-caption {
+}
+.site-content .gallery a img {
+	border: none;
+	height: auto;
+	max-width: 90%;
+}
+.site-content .gallery dd {
+	margin: 0;
+}
+.site-content .gallery-columns-4 .gallery-item {
+}
+.site-content .gallery-columns-4 .gallery-item img {
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+
+/* =Navigation
+----------------------------------------------- */
+
+.site-content [class*="navigation"] {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+[class*="navigation"] .nav-previous {
+	float: left;
+	width: 50%;
+}
+[class*="navigation"] .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/* =Comments
+----------------------------------------------- */
+
+.comment-content a {
+	word-wrap: break-word;
+}
+.bypostauthor {
+}
+
+.comment-metadata,
+.form-allowed-tags,
+.form-allowed-tags code {
+	font-size: 80%;
+	color: #888;
+}
+
+.form-allowed-tags code {
+	font-size: 95%;
+}
+
+/* =Widgets
+----------------------------------------------- */
+
+.widget {
+	margin: 0 0 20px;
+}
+
+/* Make sure select elements fit in widgets */
+.widget select {
+	max-width: 100%;
+}
+
+/* Search widget */
+.widget_search .search-submit {
+	display: none;
+}
+
+.widget_search input[type="search"] {
+	font-size: 120%;
+	padding: 8px;
+	width: 100%;
+	max-width: 225px;
+}
+
+.widget-area {
+	font-size: 90%;
+}
+
+.widget-area h1,
+.widget-area h2,
+.widget-area h3 {
+	font-size: 120%;
+	margin-bottom: 10px;
+}
+
+/* =Infinite Scroll
+----------------------------------------------- */
+
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+
+@media screen and (max-width: 740px) {
+	.menu-toggle,
+	.main-navigation.toggled .menu ul {
+		display: block;
+	}
+
+	h3.menu-toggle {
+		margin-top: 0;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+
+	.main-navigation ul li {
+		display: block;
+		float: none;
+	}
+
+	.main-navigation ul li:first-child {
+		margin-left: 2%;
+	}
+
+	.main-navigation ul ul li:first-child {
+		margin-left: 0;
+	}
+
+	.main-navigation ul ul,
+	.main-navigation ul ul a {
+		width: 98%;
+		margin-left: 2%;
+	}
+
+	.main-navigation ul ul {
+		box-shadow: none;
+		float: none;
+		font-size: 100%;
+		position: relative;
+			top: auto;
+			left: auto;
+		z-index: 1;
+	}
+}
+
+
+/*	COLUMN WIDTH ON DISPLAYS +768px
+	You might need to play with media queries here to suite your design. */
+@media ( min-width : 768px ) {
+
+	#primary {
+		width: 76%;
+		margin-right: 4%;
+		float: left;
+	}
+
+	#primary.full-width {
+		width: 100%;
+		float: none;
+		margin-right: 0;
+	}
+
+	#secondary {
+		float: left;
+		width: 20%;
+	}
+
+	.gutters .col {
+		margin-left: 4%;
+	}
+
+	.gutters .col:first-child {
+		margin-left: 0;
+	}
+
+	.grid_1 { width: 8.33333333333%; }
+	.grid_2 { width: 16.6666666667%; }
+	.grid_3 { width: 25%; }
+	.grid_4 { width: 33.3333333333%; }
+	.grid_5 { width: 41.6666666667%; }
+	.grid_6 { width: 50%; }
+	.grid_7 { width: 58.3333333333%; }
+	.grid_8 { width: 66.666666666%; }
+	.grid_9 { width: 75%; }
+	.grid_10 { width: 83.3333333333%; }
+	.grid_11 { width: 91.6666666667%; }
+	.grid_12 { width: 100%; }
+
+	.gutters .grid_1 { width: 4.5%; }
+	.gutters .grid_2 { width: 13.0%; }
+	.gutters .grid_3 { width: 21.5%; }
+	.gutters .grid_4 { width: 30.0%; }
+	.gutters .grid_5 { width: 38.5%; }
+	.gutters .grid_6 { width: 47.0%; }
+	.gutters .grid_7 { width: 55.5%; }
+	.gutters .grid_8 { width: 64.0%; }
+	.gutters .grid_9 { width: 72.5%; }
+	.gutters .grid_10 { width: 81.0%; }
+	.gutters .grid_11 { width: 89.5%; }
+	.gutters .grid_12 { width: 100%; }
+}
+
+
+
+
+
+
