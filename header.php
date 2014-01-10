@@ -28,7 +28,7 @@
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h3 class="menu-toggle"><i class="icon-menu btn"></i></h3>
+			<h3 class="menu-toggle"><i class="fa-bars btn"></i></h3>
 			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'messenger_pigeons' ); ?>"><?php _e( 'Skip to content', 'messenger_pigeons' ); ?></a></div>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu' ) ); ?>
@@ -49,7 +49,7 @@
 				<?php // Check if there's a slider
 					if ( empty($sliderID) ) {
 						if ( has_post_thumbnail( $post->ID ) ) {
-							the_post_thumbnail();
+							the_post_thumbnail('featured-image');
 						}
 					} else {
 						if ( function_exists( 'soliloquy_slider' ) ) soliloquy_slider( $sliderID );
@@ -57,5 +57,4 @@
 				</div>
 	<?php   }
 		?>
-	</div>
 	<div id="content" class="site-content container">

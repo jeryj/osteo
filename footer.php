@@ -31,9 +31,9 @@
 			<?php endif; ?>
 		</div><!-- .row -->
 		<div class="row credits">
-			Company &copy; <?php echo Date('Y'); ?>
+			<?php bloginfo( 'name' ); ?> &copy; <?php echo Date('Y'); ?>
 			<div class="right">
-				Designed by <a href="#">Us</a>
+				Designed by <a href="#">Messenger Pigeons</a>
 			</div>
 		</div>
 	</div><!-- .site-info -->
