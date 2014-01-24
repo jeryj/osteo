@@ -854,7 +854,7 @@ a:active {
 .main-navigation li {
 	float: left;
 	position: relative;
-	margin-left: 2%;
+	margin-left: 20px;
 }
 
 .main-navigation li:first-child {
@@ -864,17 +864,17 @@ a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	padding-bottom: 4px;
 }
 
 .main-navigation ul ul {
 	background: #fff;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
 	display: none;
 	float: left;
 	font-size: 90%;
 	position: absolute;
-		top: 1.5em;
-		left: 0;
+		left: -10px;
 	z-index: 99999;
 }
 
@@ -889,7 +889,7 @@ a:active {
 
 .main-navigation ul ul a {
 	width: 200px;
-	padding: 2px 5%;
+	padding: 5px 5%;
 }
 
 .main-navigation ul ul li {
