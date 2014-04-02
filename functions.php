@@ -157,7 +157,7 @@ require get_template_directory() . '/inc/shortcodes/bloginfo.php';
 
 function sliderID_meta_box() {
 	// Check if Soliloquy is activated
-	if ( is_plugin_active( 'soliloquy/soliloquy.php' ) ) {
+	if ( is_plugin_active( 'soliloquy-v2/soliloquy-v2.php' ) ) {
 
 	    $screens = array( 'post', 'page' );
 

@@ -52,7 +52,7 @@
 							the_post_thumbnail('featured-image');
 						}
 					} else {
-						if ( function_exists( 'soliloquy_slider' ) ) soliloquy_slider( $sliderID );
+						if ( function_exists( 'soliloquy' ) ) { soliloquy( $sliderID ); }
 					} ?>
 				</div>
 	<?php   }
