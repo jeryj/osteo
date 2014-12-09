@@ -38,23 +38,12 @@
 
 <div id="page" class="full-width extra-padding-bottom">
 
-		<?php // Check for Featured Images / Sliders
-
-			// Get entry for SliderID field on post/page
-			$sliderID = get_post_meta($post->ID, "_sliderID", true);
-
-			if ( !empty($sliderID) || has_post_thumbnail( $post->ID ) ) { ?>
+		<?php // Check for Featured Images
+			if ( has_post_thumbnail( $post->ID ) ) : ?>
 				<div class="banner extra-margin-bottom">
-
-				<?php // Check if there's a slider
-					if ( empty($sliderID) ) {
-						if ( has_post_thumbnail( $post->ID ) ) {
-							the_post_thumbnail('featured-image');
-						}
-					} else {
-						if ( function_exists( 'soliloquy' ) ) { soliloquy( $sliderID ); }
-					} ?>
+				<?php if ( has_post_thumbnail( $post->ID ) ) :
+						the_post_thumbnail('featured-image');
+					endif; ?>
 				</div>
-	<?php   }
-		?>
+			<?php endif; ?>
 	<div id="content" class="site-content container">
