@@ -1174,6 +1174,7 @@ object {
 	#secondary {
 		float: left;
 		width: 20%;
+		padding-top: 22px;
 	}
 
 	.gutters .col {
