@@ -150,3 +150,53 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/shortcodes/bloginfo.php';
+
+function archiveTitle() {
+    if ( is_post_type_archive() ) :
+        post_type_archive_title();
+
+    elseif ( is_category() || is_tax() ) :
+        single_cat_title();
+
+    elseif ( is_tag() ) :
+        single_tag_title();
+
+    elseif ( is_author() ) :
+        /* Queue the first post, that way we know
+         * what author we're dealing with (if that is the case).
+        */
+        the_post();
+        printf( __( 'Author: %s', 'messenger_pigeons' ), '<span class="vcard">' . get_the_author() . '</span>' );
+        /* Since we called the_post() above, we need to
+         * rewind the loop back to the beginning that way
+         * we can run the loop properly, in full.
+         */
+        rewind_posts();
+
+    elseif ( is_day() ) :
+        printf( __( 'Day: %s', 'messenger_pigeons' ), '<span>' . get_the_date() . '</span>' );
+
+    elseif ( is_month() ) :
+        printf( __( 'Month: %s', 'messenger_pigeons' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+
+    elseif ( is_year() ) :
+        printf( __( 'Year: %s', 'messenger_pigeons' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+
+    elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
+        _e( 'Asides', 'messenger_pigeons' );
+
+    elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
+        _e( 'Images', 'messenger_pigeons');
+
+    elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
+        _e( 'Videos', 'messenger_pigeons' );
+
+    elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
+        _e( 'Quotes', 'messenger_pigeons' );
+
+    elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
+        _e( 'Links', 'messenger_pigeons' );
+    else :
+        _e( 'Archives', 'messenger_pigeons' );
+    endif;
+}
