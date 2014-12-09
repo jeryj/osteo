@@ -80,6 +80,14 @@ a img {
 	border: 0;
 }
 
+/* Reseting to border-box so we can do 100% width with 20px and not mess stuff up. */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 /* General
 -------------------------------*/
 
@@ -232,6 +240,7 @@ input {
 	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
 }
 
+body .soliloquy-container .btn,
 button,
 html input[type="button"],
 input[type="reset"],
@@ -535,6 +544,7 @@ h1 {
 	font-size: 165%;
 }
 
+body .soliloquy-container h2,
 h2 {
 	font-size: 150%;
 }
@@ -682,9 +692,6 @@ input[type="radio"] {
 }
 input[type="search"] {
 	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
-	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
-	-moz-box-sizing:    content-box;
-	box-sizing:         content-box;
 }
 input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
 	-webkit-appearance: none;
@@ -1104,6 +1111,28 @@ object {
 	display: block;
 }
 
+/* Soliloquy */
+
+body .soliloquy-container h2 {
+	margin-bottom: 20px;
+}
+
+body .soliloquy-container .soliloquy-caption {
+	bottom: 100px;
+	left: 32%;
+	right: 32%;
+	width: auto;
+}
+
+body .soliloquy-container .soliloquy-caption-inside {
+	background: rgba(255,255,255,.8);
+	padding: 20px;
+}
+
+body .soliloquy-container, body .soliloquy-container * {
+	line-height: inherit;
+}
+
 
 @media screen and (max-width: 740px) {
 	.menu-toggle,
@@ -1147,6 +1176,25 @@ object {
 			left: auto;
 		z-index: 1;
 	}
+
+	body .soliloquy-container .soliloquy-caption {
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		position: relative;
+		display: block !important;
+		background: #cae2ee;
+	}
+
+	body .soliloquy-container .soliloquy-caption-inside {
+		padding: 10px;
+		font-size: 90%;
+	}
+
+    .soliloquy-container .soliloquy-pager {
+    	display: none!important;
+    }
 }
 
 
