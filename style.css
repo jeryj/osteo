@@ -486,8 +486,8 @@ ul.no-style li {
 .container {
 	max-width: 1020px;
 	margin: 0px auto;
-	padding: 0 4%;
-	position: relative;
+	padding-left: 4%;
+	padding-right: 4%;
 }
 
 /*	SELF CLEARING FLOATS - CLEARFIX METHOD */
@@ -506,7 +506,8 @@ ul.no-style li {
 }
 
 .row.extra-padding {
-	padding: 40px 0;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
 
 .col {
