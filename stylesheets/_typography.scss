@@ -1,0 +1,222 @@
+$fontBody : "Open Sans", "Helvetica Neue", Helvetica, Arial, Lucida Grande, sans-serif;
+$fontHeader : "Open Sans", "Helvetica Neue", Helvetica, Arial, Lucida Grande, sans-serif;
+
+body,
+button,
+input,
+select,
+textarea {
+    color: #272b35;
+    font-family: $fontBody;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+    font-family: $fontHeader;
+    clear: both;
+    margin: 0 0 10px;
+    color: #3355b5;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 165%;
+}
+
+h2 {
+    font-size: 150%;
+}
+
+h3 {
+    font-size: 135%;
+}
+
+h4 {
+    font-size: 120%;
+}
+
+h5 {
+    font-size: 110%;
+}
+
+h6 {
+    font-size: 100%;
+}
+
+p+h1, ul+h1,
+p+h2, ul+h2,
+p+h3, ul+h3,
+p+h4, ul+h4,
+p+h5, ul+h5,
+p+h6, ul+h6 {
+    margin-top: 30px;
+}
+
+
+hr {
+    background-color: #ddd;
+    border: 0;
+    height: 1px;
+    margin-bottom: 18px;
+}
+
+/* Text elements */
+p {
+    font-size: 100%;
+    margin-bottom: 18px;
+}
+ul, ol {
+    margin: 0 0 20px 7%;
+}
+ul {
+    list-style: disc;
+}
+ol {
+    list-style: decimal;
+}
+li > ul,
+li > ol {
+    margin-bottom: 0;
+    margin-left: 4%;
+}
+dt {
+    font-weight: bold;
+}
+dd {
+    margin: 0 1.5em 1.5em;
+}
+b, strong {
+    font-weight: bold;
+}
+dfn, cite, em {
+    font-style: italic;
+}
+blockquote {
+    font-family: georgia, times, serif;
+    font-style: italic;
+    margin: 0 1.5em;
+}
+address {
+    margin: 0 0 1.5em;
+}
+pre {
+    background: #eee;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    padding: 1.6em;
+    overflow: auto;
+    max-width: 100%;
+}
+code, kbd, tt, var {
+    font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+mark, ins {
+    background: #fff9c0;
+    text-decoration: none;
+}
+sup,
+sub {
+    font-size: 75%;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup {
+    bottom: 1ex;
+}
+sub {
+    top: .5ex;
+}
+small {
+    font-size: 75%;
+}
+big {
+    font-size: 125%;
+}
+figure {
+    margin: 0;
+}
+table {
+    margin: 0 0 20px;
+    width: 100%;
+}
+th {
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+
+img {
+    height: auto; /* Make sure images are scaled correctly. */
+    max-width: 100%; /* Adhere to container width. */
+}
+
+label {
+    font-size: 85%;
+    color: #666;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+    padding: 0; /* Addresses excess padding in IE8/9 */
+}
+input[type="search"] {
+    -webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+    -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+    border: 0;
+    padding: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea {
+    color: #666;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: 0 0 3px rgba(0,0,0,.15);
+    padding: 8px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+    color: #111;
+}
+
+textarea {
+    overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+    vertical-align: top; /* Improves readability and alignment in all browsers */
+    width: 98%;
+}
+
+/* Links */
+a {
+    color: #ebac10;
+    text-decoration: none;
+    @include transition(all .2s);
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #ffb600;
+}

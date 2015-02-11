@@ -1,0 +1,34 @@
+$dark_blue : #3355b5;
+$light_blue : #dbe5fc;
+$orange : #ebac10;
+$darker_orange : #f9bb1e;
+$white : #fff;
+
+
+.dark-blue {
+    color: $dark_blue;
+}
+
+.dark-blue-bg {
+    background: $dark_blue;
+}
+
+.light-blue {
+    color: $light_blue;
+}
+
+.light-blue-bg {
+    background: $light_blue;
+}
+
+.orange {
+    color: $orange;
+}
+
+.orange-bg {
+    background: $darker_orange;
+}
+
+.white {
+    color: $white;
+}

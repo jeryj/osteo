@@ -1,0 +1,110 @@
+.main-navigation {
+    clear: both;
+    display: block;
+    float: left;
+    width: 100%;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+    }
+
+    li {
+        float: left;
+        position: relative;
+        margin-left: 20px;
+    }
+
+    li:first-child {
+        margin-left: 0;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        padding-bottom: 4px;
+    }
+
+    ul ul {
+        background: #fff;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+        display: none;
+        float: left;
+        font-size: 90%;
+        position: absolute;
+            left: -10px;
+        z-index: 99999;
+    }
+
+    ul ul li {
+        margin-left: 0;
+    }
+
+    ul ul a {
+        width: 200px;
+        padding: 5px 5%;
+    }
+
+     ul li:hover > ul {
+        display: block;
+    }
+
+    ul ul ul {
+        left: 100%;
+        top: 0;
+    }
+
+}
+
+
+/* Small menu */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 740px) {
+    .menu-toggle,
+    .main-navigation.toggled .menu ul {
+        display: block;
+    }
+
+    h3.menu-toggle {
+        margin-top: 0;
+    }
+
+    .main-navigation ul {
+        display: none;
+    }
+
+    .main-navigation ul li {
+        display: block;
+        float: none;
+    }
+
+    .main-navigation ul li:first-child {
+        margin-left: 2%;
+    }
+
+    .main-navigation ul ul li:first-child {
+        margin-left: 0;
+    }
+
+    .main-navigation ul ul,
+    .main-navigation ul ul a {
+        width: 98%;
+        margin-left: 2%;
+    }
+
+    .main-navigation ul ul {
+        box-shadow: none;
+        float: none;
+        font-size: 100%;
+        position: relative;
+            top: auto;
+            left: auto;
+        z-index: 1;
+    }
+
+}
