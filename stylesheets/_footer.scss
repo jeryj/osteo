@@ -1,11 +1,34 @@
 #colophon {
-    font-size: 90%;
-
-    .widget h3 {
-        margin-top: 0;
-    }
+    background-color: $light_gray;
+    color: $dark_gray;
+    font-size: .9em;
 
     .credits {
-        font-size: 80%;
+        font-size: .8em;
     }
+
+    .widget-area {
+        @include media($tablet) {
+            @include span(4);
+
+            &:last-child {
+                @include last;
+            }
+        }
+
+    }
+
+
+    .created-by {
+        float: right;
+    }
+
+    .contact-info {
+        @extend %no-style;
+    }
+
+
 }
+
+
+

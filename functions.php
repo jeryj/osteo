@@ -40,7 +40,7 @@ function messenger_pigeons_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size( 1500, 500, true );
+    set_post_thumbnail_size( 1500, 400, true );
 
     /**
      * Add custom Image sizes
@@ -112,8 +112,14 @@ add_action( 'widgets_init', 'messenger_pigeons_widgets_init' );
  * Enqueue scripts and styles
  */
 function messenger_pigeons_scripts() {
-	wp_enqueue_style( 'messenger_pigeons-font-awesome', get_template_directory_uri() . '/icons/css/font-awesome.css' );
+    global $wp_styles;
+
+	wp_enqueue_style( 'messenger_pigeons-icons', get_template_directory_uri() . '/icons/style.css' );
 	wp_enqueue_style( 'messenger_pigeons-style', get_stylesheet_uri() );
+
+    wp_enqueue_style( 'messenger_pigeons-style-old-ie', get_stylesheet_directory_uri() . "/ie.css", array( 'messenger_pigeons-style' ) );
+    $wp_styles->add_data( 'messenger_pigeons-style-old-ie', 'conditional', 'lt IE 9' );
+
 	wp_enqueue_script( 'messenger_pigeons-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
     wp_enqueue_script( 'messenger_pigeons-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '20120206', true );
 
@@ -129,7 +135,7 @@ function messenger_pigeons_scripts() {
 	If Developing without internet, comment out this section */
 	if( !is_admin()){
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"), false, '1.10.2');
+		wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"), false, '1.11.2');
 		wp_enqueue_script('jquery');
 	}
 }

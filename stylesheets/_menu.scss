@@ -1,110 +1,161 @@
-.main-navigation {
-    clear: both;
-    display: block;
-    float: left;
-    width: 100%;
+@include mobile-only {
 
-    ul {
-        list-style: none;
-        margin: 0;
-        padding-left: 0;
+    .main-navigation {
+        position: absolute;
+        top: -100%;
+        opacity: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        max-height: 0;
+        padding: 0;
+        @include transition(all .5s);
+
+        ul {
+            float: left;
+            width: 40%;
+            margin: 50px 0 0;
+
+            li {
+                text-align: right;
+                margin-bottom: 30px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+
+            a {
+                padding: 8px 25px 8px 15px;
+                color: $white;
+            }
+
+            .current-menu-parent a,
+            .current-menu-item a {
+                background: #fff;
+                color: $blue;
+            }
+        }
+
+        ul ul {
+            position: absolute;
+            margin: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 60%;
+            padding: 20px;
+            background: $white;
+
+            li {
+                text-align: left;
+                width: 100%;
+                padding: 0;
+                margin: 20px 0;
+
+                &:first-child {
+                    margin-top: 30px;
+                }
+            }
+
+            a {
+                color: $blue;
+            }
+
+        }
     }
 
-    li {
-        float: left;
+    .main-navigation.toggled {
+        padding: 20px;
+        top: 0;
+        opacity: 1;
+        background: rgba($blue, .8);
+        max-height: 1000px;
+        z-index: 999999999;
+    }
+
+    .menu-toggle {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 180%;
+        cursor: pointer;
+    }
+
+    a.menu-close {
+        font-size: 28px;
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        cursor: pointer;
+    }
+}
+
+@include media($tablet) {
+
+    .main-navigation {
         position: relative;
-        margin-left: 20px;
+        background: $light_gray;
+
+        ul {
+            list-style: none;
+            margin: 0 auto;
+            text-align: center;
+            max-width: 1020px;
+        }
+
+        ul li {
+            display: inline-block;
+        }
+
+        ul li:first-child {
+            margin-left: 0;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            padding: 6px 18px 8px;
+        }
+
     }
 
-    li:first-child {
-        margin-left: 0;
+    /* Small menu */
+    .menu-toggle,
+    a.menu-close {
+        display: none;
     }
 
-    a {
+}
+
+nav {
+    @extend %no-style;
+}
+
+.main-navigation {
+    .current-menu-parent a,
+    .current-menu-item a {
+        background: #fff;
+        color: $blue;
+    }
+
+    .current-menu-parent ul,
+    .current-menu-item ul {
+        z-index: 9;
         display: block;
-        text-decoration: none;
-        padding-bottom: 4px;
+
+        a {
+            padding: 6px 10px;
+            color: $gray;
+        }
     }
 
     ul ul {
-        background: #fff;
-        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
-        display: none;
-        float: left;
-        font-size: 90%;
-        position: absolute;
-            left: -10px;
-        z-index: 99999;
+        li.current-menu-parent a,
+        li.current-menu-item a {
+            color: $font;
+        }
     }
-
-    ul ul li {
-        margin-left: 0;
-    }
-
-    ul ul a {
-        width: 200px;
-        padding: 5px 5%;
-    }
-
-     ul li:hover > ul {
-        display: block;
-    }
-
-    ul ul ul {
-        left: 100%;
-        top: 0;
-    }
-
-}
-
-
-/* Small menu */
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 740px) {
-    .menu-toggle,
-    .main-navigation.toggled .menu ul {
-        display: block;
-    }
-
-    h3.menu-toggle {
-        margin-top: 0;
-    }
-
-    .main-navigation ul {
-        display: none;
-    }
-
-    .main-navigation ul li {
-        display: block;
-        float: none;
-    }
-
-    .main-navigation ul li:first-child {
-        margin-left: 2%;
-    }
-
-    .main-navigation ul ul li:first-child {
-        margin-left: 0;
-    }
-
-    .main-navigation ul ul,
-    .main-navigation ul ul a {
-        width: 98%;
-        margin-left: 2%;
-    }
-
-    .main-navigation ul ul {
-        box-shadow: none;
-        float: none;
-        font-size: 100%;
-        position: relative;
-            top: auto;
-            left: auto;
-        z-index: 1;
-    }
-
 }

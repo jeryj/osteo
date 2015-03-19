@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Page content with no title.

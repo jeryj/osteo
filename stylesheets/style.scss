@@ -1,15 +1,23 @@
-@import "bourbon/bourbon";
+@import "susy/susy";
+$susy: (
+/* Changing Susy default global settings */
+  /* Tells Susy to use 12 columns */
+  columns: 12,
+  /* Tells Susy that the container has a max-width of 1020px */
+  container: 1020px,
+  /* Tells Susy to use border-box */
+  global-box-sizing: border-box
+);
+
 @import "setup";
-@import "reset";
-@import "wordpress";
-@import "typography";
 @import "colors";
 @import "general";
-@import "buttons";
 @import "grid";
+@import "typography";
 @import "header";
-@import "footer";
+// If you need a large banner image
+// @import "banner";
 @import "menu";
-
+@import "footer";
 
 

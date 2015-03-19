@@ -7,10 +7,8 @@
 jQuery( document ).ready( function( $ ) {
 
     //Navigation
-    $('.menu-toggle').click(function() {
+    $(document).on('click', '.menu-toggle, .menu-close', function() {
         $('.main-navigation').toggleClass('toggled');
     });
-
-
 
 });
