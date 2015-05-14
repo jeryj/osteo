@@ -2,7 +2,7 @@
 // SeT THIS IN IE.SCSS $fix-mqs: false !default;
 $fix-mqs: 48em;
 
-@import "../gulp/bower_components/susy/sass/susy";
+@import "../../../gulp/bower_components/susy/sass/susy";
 $susy: (
 /* Changing Susy default global settings */
   /* Tells Susy to use 12 columns */
