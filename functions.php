@@ -255,3 +255,11 @@ function contactInfo() {
 
     return $contact_info;
 }
+
+
+function new_excerpt_more($more) {
+    global $post;
+    // use &nbsp; to keep them on one line.
+    return '&hellip; <a class="moretag" href="'. get_permalink($post->ID) . '">Read&nbsp;More&nbsp;<i class="icon-chevron-right read-more-icon"></i></a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
