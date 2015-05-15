@@ -17,7 +17,8 @@
         // do we want to show the contact form in the footer?
         $show_contact_form = get_option('show_contact_in_footer');
         // will return as '1', so use == instead of ===
-        if($show_contact_form == true) :
+        // we also want to make sure we're not on the contact page template already
+        if($show_contact_form == true && !is_page_template('page-templates/contact.php')) :
             // need this for gravity forms active check
             include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
             // if it's true, let's see if there's actually a form and if gravity forms is installed

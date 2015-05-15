@@ -188,6 +188,8 @@
 }
 
 .i-list {
+    @extend %no-style;
+
     li {
         padding-left: 28px;
         position: relative;
