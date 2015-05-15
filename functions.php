@@ -120,6 +120,13 @@ function messenger_pigeons_scripts() {
     wp_enqueue_style( 'messenger_pigeons-style-old-ie', get_stylesheet_directory_uri() . "/ie.css", array( 'messenger_pigeons-style' ) );
     $wp_styles->add_data( 'messenger_pigeons-style-old-ie', 'conditional', 'lt IE 9' );
 
+    // headroom
+    wp_enqueue_script( 'messenger_pigeons-headroom', get_template_directory_uri() . '/js/headroom.min.js', array(), '20120206', true );
+    wp_enqueue_script( 'messenger_pigeons-headroom-jQuery', get_template_directory_uri() . '/js/jQuery.headroom.min.js', array(), '20120206', true );
+
+    // tappy for removing 300ms delay on most mobile browsers
+    wp_enqueue_script( 'tappy_js',  get_template_directory_uri() . '/js/tappy.js', array(), '20120206', true );
+
 	wp_enqueue_script( 'messenger_pigeons-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
     wp_enqueue_script( 'messenger_pigeons-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '20120206', true );
 
@@ -205,4 +212,46 @@ function archiveTitle() {
     else :
         _e( 'Archives', 'messenger_pigeons' );
     endif;
+}
+
+function contactInfo() {
+    $address_line_1 = get_option('address_line_1');
+    $address_line_2 = get_option('address_line_2');
+    $city_st_zip = get_option('city_st_zip');
+    $contact_email = get_option('contact_email');
+
+    $contact_info = '';
+
+    // get the address all chained together
+    if(!empty($address_line_1) || !empty($city_st_zip)) :
+        // we know we'll show it, so start the address w/ icon
+        $address = '<li><i class="icon-property"></i>';
+
+        if(!empty($address_line_1)) :
+            // we know we have the first address
+            $address .= $address_line_1
+                        // let's check for the second line.
+                        .(!empty($address_line_2 ) ? '<br/>'.$address_line_2 : '');
+        endif;
+
+        // check on the city st zip
+        if(!empty($city_st_zip)) :
+            // if the address_line_1 is empty, then we don't need the <br/>. Otherwise, we just need the city_st_zp
+            $address .= (!empty($address_line_1) ? '<br/>'.$city_st_zip : $city_st_zip );
+        endif;
+
+        // append the final li
+        $address .= '</li>';
+    endif;
+
+
+    if(!empty($address) || !empty($phone_number) || !empty($contact_email) ) {
+        $contact_info = '<ul class="contact-info i-list">'
+             .(!empty($address ) ? $address : '')
+             .(!empty($phone_number ) ? '<li><i class="icon-phonelight"></i>'.$phone_number.'</li>' : '')
+             .(!empty($contact_email ) ? '<li><i class="icon-email"></i>'.$contact_email.'</li>' : '')
+            .'</ul>';
+    }
+
+    return $contact_info;
 }

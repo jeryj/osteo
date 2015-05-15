@@ -10,7 +10,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -27,22 +27,26 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('no-js'); ?>>
 <?php do_action( 'before' ); ?>
 
-<header id="masthead" class="site-header blue-section xp-top" role="banner">
-	<div class="row">
-		<a class="menu-toggle white"><i class="icon-bars"></i></a>
-		<figure class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="white"><i class="icon-cis"></i></a></figure>
-	</div>
+<header id="masthead" class="site-header section" role="banner">
+    <div class="row">
+        <figure class="logo">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                LOGO
+            </a>
+        </figure>
+        <div class="menu-toggle">
+            <div class="bar"></div>
+        </div>
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+            <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'messenger_pigeons' ); ?>"><?php _e( 'Skip to content', 'messenger_pigeons' ); ?></a></div>
+            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu-wrap' ) ); ?>
+        </nav><!-- #site-navigation -->
+    </div>
+
 </header><!-- #masthead -->
-
-<nav id="site-navigation" class="main-navigation" role="navigation">
-	<a class="menu-close"><i class="icon-xcircle red"></i></a>
-	<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'messenger_pigeons' ); ?>"><?php _e( 'Skip to content', 'messenger_pigeons' ); ?></a></div>
-
-	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu-wrap' ) ); ?>
-</nav><!-- #site-navigation -->
 
 <div id="page" class="full-width extra-padding-bottom section">
 	<div id="content" class="site-content xp-vertical xm-vertical row">

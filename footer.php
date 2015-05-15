@@ -13,28 +13,25 @@
 
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<?php
-		$contact_form = get_option('contact_form');
-		if(!empty($contact_form)) :?>
-    		<div class="contact section">
-                <section class="row-pad">
-    				<h2 class="section-title xm-top">Contact Us</h2>
-    				<?php echo do_shortcode('[gravityform id='.$contact_form.' title=false ajax=true]');?>
-    			</section>
-            </div>
-		<? endif;
-        $get_started = get_option('get_started_tagline');
-        $get_started_link = get_option('get_started_link');
-        if(!empty($get_started) && !empty($get_started_link)) {?>
-            <div class="section get-started">
-                <section class="row-pad">
-                    <h2 class="section-title"><?php echo $get_started?></h3>
-                    <a class="btn btn-large" href="<?php echo $get_started_link;?>">Get Started</a>
-                    <?php $login_url = get_option('login_page' );
-                    (!empty($login_url) ? $login_url = get_permalink($login_url) : $login_url = '#');?>
-                    <p>Already a customer? <a href="<?php echo $login_url;?>" class="login">Login Now</a></p>
-                </section>
-            </div>
-        <?}?>
+        // check if gravity forms is active
+        // do we want to show the contact form in the footer?
+        $show_contact_form = get_option('show_contact_in_footer');
+        // will return as '1', so use == instead of ===
+        if($show_contact_form == true) :
+            // need this for gravity forms active check
+            include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+            // if it's true, let's see if there's actually a form and if gravity forms is installed
+            $contact_form = get_option('contact_form');
+            if(!empty($contact_form) && is_plugin_active('gravityforms/gravityforms.php') ) :?>
+                <div class="contact section">
+                    <section class="row-pad">
+                        <h2 class="section-title xm-top">Contact Us</h2>
+                        <?php echo do_shortcode('[gravityform id='.$contact_form.' title=false ajax=true]');?>
+                    </section>
+                </div>
+            <?endif;
+        endif; // end of show_contact_form === true?>
+
 	<div class="site-info section xp-vertical">
 		<div class="row">
 			<div id="footer-1" class="widget-area center" role="complementary">
@@ -74,23 +71,9 @@
 			</div>
 			<div id="footer-3" class="widget-area" role="complementary">
 				<?php
-					dynamic_sidebar( 'footer-3' );
+				    dynamic_sidebar( 'footer-3' );
 					 // Address
-				   $address_line_1 = get_option('address_line_1');
-				   $address_line_2 = get_option('address_line_2');
-				   $city_st_zip = get_option('city_st_zip');
-				   $contact_email = get_option('contact_email');
-
-					if(!empty($address_line_1) || !empty($city_st_zip) || !empty($phone_number)) {
-						echo '<ul class="contact-info i-list">'
-							 .(!empty($address_line_1 ) ? '<li><i class="icon-property"></i>'.$address_line_1 : '')
-							 .(!empty($address_line_2 ) ? '<br/>'.$address_line_2 : '')
-							 .(!empty($city_st_zip ) ? '<br/>'.$city_st_zip : '')
-                             .(!empty($address_line_1 ) || !empty($address_line_2 ) || !empty($city_st_zip ) ? '</li>' : '')
-							 .(!empty($phone_number ) ? '<li><i class="icon-phonelight"></i>'.$phone_number.'</li>' : '')
-							 .(!empty($contact_email ) ? '<li><i class="icon-email"></i>'.$contact_email.'</li>' : '')
-							.'</ul>';
-					}
+                    echo contactInfo();
 				?>
 			</div>
 		</div><!-- .row -->
