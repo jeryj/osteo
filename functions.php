@@ -163,6 +163,8 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/shortcodes/bloginfo.php';
+require get_template_directory() . '/inc/photoswipe.php';
+
 
 function archiveTitle() {
     if ( is_post_type_archive() ) :
