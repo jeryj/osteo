@@ -220,6 +220,7 @@ function contactInfo() {
     $address_line_1 = get_option('address_line_1');
     $address_line_2 = get_option('address_line_2');
     $city_st_zip = get_option('city_st_zip');
+    $phone_number = get_option('phone_number');
     $contact_email = get_option('contact_email');
 
     $contact_info = '';

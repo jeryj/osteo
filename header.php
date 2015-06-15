@@ -15,6 +15,23 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<meta property="og:site_name" content="<? bloginfo('name');?>"/>
+<meta property="og:title" content="<?php the_title();?>"/>
+<?
+if(has_post_thumbnail()) :
+    $img_id = get_post_thumbnail_id( $post->ID );
+    $img_large = wp_get_attachment_image_src( $img_id, 'large' );
+    if(!empty($img_large)) :
+        $og_img_src = $img_large[0];
+    endif;
+else :
+    // $og_img_src = http://some other image, like the logo;
+endif;
+
+if(!empty($og_img_src)) : ?>
+<meta property="og:image" content="<? echo $og_img_src;?>"/>
+<? endif; ?>
+
 <?// Typekit Museo Sans Rounded ?>
 <script src="//use.typekit.net/uuo4jyp.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>
