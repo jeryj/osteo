@@ -32,10 +32,6 @@ if(!empty($og_img_src)) : ?>
 <meta property="og:image" content="<? echo $og_img_src;?>"/>
 <? endif; ?>
 
-<?// Typekit Museo Sans Rounded ?>
-<script src="//use.typekit.net/uuo4jyp.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
-
 <!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri();?>/js/html5shiv.js"></script>
 <![endif]-->
@@ -49,11 +45,11 @@ if(!empty($og_img_src)) : ?>
 
 <header id="masthead" class="site-header section" role="banner">
     <div class="row">
-        <figure class="logo">
+        <div class="logo">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-                LOGO
+                Osteo
             </a>
-        </figure>
+        </div>
         <div class="menu-toggle">
             <div class="bar"></div>
         </div>

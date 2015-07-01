@@ -1,5 +1,6 @@
-$fontBody : "museo-sans-rounded", "Helvetica Neue", Helvetica, Arial, Lucida Grande, sans-serif;
-$fontTitle : "museo-sans-rounded", "Helvetica Neue", Helvetica, Arial, Lucida Grande, sans-serif;
+// don't use helvetica. have some respect.
+$fontBody : "Helvetica Neue", Helvetica, Arial, Lucida Grande, sans-serif;
+$fontTitle : "Helvetica Neue", Helvetica, Arial, Lucida Grande, sans-serif;
 
 body,
 button,
@@ -203,12 +204,14 @@ input[type="radio"] {
     box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
     padding: 0; /* Addresses excess padding in IE8/9 */
 }
+/* haven't encountered these for a long time, and I have to reset it anyways to get search forms to be styled on ios. removing for now (6/23/15)
 input[type="search"] {
-    -webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+    -webkit-appearance: textfield; // Addresses appearance set to searchfield in S5, Chrome
 }
-input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+input[type="search"]::-webkit-search-decoration { // Corrects inner padding displayed oddly in S5, Chrome on OSX
     -webkit-appearance: none;
 }
+*/
 button::-moz-focus-inner,
 input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
     border: 0;
