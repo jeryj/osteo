@@ -27,6 +27,13 @@
 
     }
 
+    &.two-gallery {
+        .gallery-item {
+            @include gallery(10 of 20);
+            margin-bottom: gutter(20);
+        }
+    }
+
     &.three-gallery {
         .gallery-item {
             @include media($desktop) {
@@ -34,11 +41,6 @@
                 margin-bottom: gutter(24);
             }
         }
-    }
-
-    &.two-gallery {
-        @include gallery(10 of 20);
-        margin-bottom: gutter(20);
     }
 
     .gallery-caption {
