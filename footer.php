@@ -81,7 +81,7 @@
 		<div class="row credits">
 			<?php bloginfo( 'name' ); ?> &copy; <?php echo Date('Y'); ?>
 			<aside class="created-by">
-				Designed by <a href="http://www.messengerpigeons.com" target="_blank">Messenger Pigeons</a>
+				Designed by <a href="http://jeremyjon.es" target="_blank">Jeremy Jones</a>
 			</aside>
 		</div>
 	</div><!-- .site-info -->
