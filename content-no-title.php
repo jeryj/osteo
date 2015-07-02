@@ -2,7 +2,7 @@
 /**
  * Page content with no title.
  *
- * @package messenger_pigeons
+ * @package osteo
  */
 ?>
 
@@ -12,10 +12,10 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'messenger_pigeons' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'osteo' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'messenger_pigeons' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'osteo' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-## -->

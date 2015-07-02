@@ -4,7 +4,7 @@
  *
  * When you just want a simple, full width content page.
  *
- * @package messenger_pigeons
+ * @package osteo
  */
 
 get_header(); ?>

@@ -1,8 +1,8 @@
 <?php
 /**
- * messenger_pigeons functions and definitions
+ * osteo functions and definitions
  *
- * @package messenger_pigeons
+ * @package osteo
  */
 
 /**
@@ -11,7 +11,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
 
-if ( ! function_exists( 'messenger_pigeons_setup' ) ) :
+if ( ! function_exists( 'osteo_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -19,15 +19,15 @@ if ( ! function_exists( 'messenger_pigeons_setup' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  */
-function messenger_pigeons_setup() {
+function osteo_setup() {
 
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on messenger_pigeons, use a find and replace
-	 * to change 'messenger_pigeons' to the name of your theme in all the template files
+	 * If you're building a theme based on osteo, use a find and replace
+	 * to change 'osteo' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'messenger_pigeons', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'osteo', get_template_directory() . '/languages' );
 
 	/**
 	 * Add default posts and comments RSS feed links to head
@@ -54,7 +54,7 @@ function messenger_pigeons_setup() {
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'messenger_pigeons' ),
+		'primary' => __( 'Primary Menu', 'osteo' ),
 	) );
 
 	/**
@@ -63,15 +63,15 @@ function messenger_pigeons_setup() {
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
 }
-endif; // messenger_pigeons_setup
-add_action( 'after_setup_theme', 'messenger_pigeons_setup' );
+endif; // osteo_setup
+add_action( 'after_setup_theme', 'osteo_setup' );
 
 /**
  * Register widgetized area and update sidebar with default widgets
  */
-function messenger_pigeons_widgets_init() {
+function osteo_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'messenger_pigeons' ),
+		'name'          => __( 'Sidebar', 'osteo' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -80,7 +80,7 @@ function messenger_pigeons_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer One', 'messenger_pigeons' ),
+		'name'          => __( 'Footer One', 'osteo' ),
 		'id'            => 'footer-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -89,7 +89,7 @@ function messenger_pigeons_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer Two', 'messenger_pigeons' ),
+		'name'          => __( 'Footer Two', 'osteo' ),
 		'id'            => 'footer-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -98,7 +98,7 @@ function messenger_pigeons_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer Three', 'messenger_pigeons' ),
+		'name'          => __( 'Footer Three', 'osteo' ),
 		'id'            => 'footer-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -106,36 +106,32 @@ function messenger_pigeons_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 }
-add_action( 'widgets_init', 'messenger_pigeons_widgets_init' );
+add_action( 'widgets_init', 'osteo_widgets_init' );
 
 /**
  * Enqueue scripts and styles
  */
-function messenger_pigeons_scripts() {
+function osteo_scripts() {
     global $wp_styles;
 
-	wp_enqueue_style( 'messenger_pigeons-icons', get_template_directory_uri() . '/icons/style.css' );
-	wp_enqueue_style( 'messenger_pigeons-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'osteo-icons', get_template_directory_uri() . '/icons/style.css' );
+	wp_enqueue_style( 'osteo-style', get_stylesheet_uri() );
 
-    wp_enqueue_style( 'messenger_pigeons-style-old-ie', get_stylesheet_directory_uri() . "/ie.css", array( 'messenger_pigeons-style' ) );
-    $wp_styles->add_data( 'messenger_pigeons-style-old-ie', 'conditional', 'lt IE 9' );
-
-    // headroom
-    wp_enqueue_script( 'messenger_pigeons-headroom', get_template_directory_uri() . '/js/headroom.min.js', array(), '20120206', true );
-    wp_enqueue_script( 'messenger_pigeons-headroom-jQuery', get_template_directory_uri() . '/js/jQuery.headroom.min.js', array(), '20120206', true );
+    wp_enqueue_style( 'osteo-style-old-ie', get_stylesheet_directory_uri() . "/ie.css", array( 'osteo-style' ) );
+    $wp_styles->add_data( 'osteo-style-old-ie', 'conditional', 'lt IE 9' );
 
     // tappy for removing 300ms delay on most mobile browsers
     wp_enqueue_script( 'tappy_js',  get_template_directory_uri() . '/js/tappy.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'messenger_pigeons-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-    wp_enqueue_script( 'messenger_pigeons-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '20120206', true );
+	wp_enqueue_script( 'osteo-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+    wp_enqueue_script( 'osteo-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '20120206', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'messenger_pigeons-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+		wp_enqueue_script( 'osteo-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 
 	/* Disable Pre-loaded Jquery from Worpdress and use Google instead.
@@ -146,7 +142,7 @@ function messenger_pigeons_scripts() {
 		wp_enqueue_script('jquery');
 	}
 }
-add_action( 'wp_enqueue_scripts', 'messenger_pigeons_scripts' );
+add_action( 'wp_enqueue_scripts', 'osteo_scripts' );
 
 
 
@@ -181,7 +177,7 @@ function archiveTitle() {
          * what author we're dealing with (if that is the case).
         */
         the_post();
-        printf( __( 'Author: %s', 'messenger_pigeons' ), '<span class="vcard">' . get_the_author() . '</span>' );
+        printf( __( 'Author: %s', 'osteo' ), '<span class="vcard">' . get_the_author() . '</span>' );
         /* Since we called the_post() above, we need to
          * rewind the loop back to the beginning that way
          * we can run the loop properly, in full.
@@ -189,30 +185,30 @@ function archiveTitle() {
         rewind_posts();
 
     elseif ( is_day() ) :
-        printf( __( 'Day: %s', 'messenger_pigeons' ), '<span>' . get_the_date() . '</span>' );
+        printf( __( 'Day: %s', 'osteo' ), '<span>' . get_the_date() . '</span>' );
 
     elseif ( is_month() ) :
-        printf( __( 'Month: %s', 'messenger_pigeons' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+        printf( __( 'Month: %s', 'osteo' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
     elseif ( is_year() ) :
-        printf( __( 'Year: %s', 'messenger_pigeons' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+        printf( __( 'Year: %s', 'osteo' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
     elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-        _e( 'Asides', 'messenger_pigeons' );
+        _e( 'Asides', 'osteo' );
 
     elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-        _e( 'Images', 'messenger_pigeons');
+        _e( 'Images', 'osteo');
 
     elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-        _e( 'Videos', 'messenger_pigeons' );
+        _e( 'Videos', 'osteo' );
 
     elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-        _e( 'Quotes', 'messenger_pigeons' );
+        _e( 'Quotes', 'osteo' );
 
     elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-        _e( 'Links', 'messenger_pigeons' );
+        _e( 'Links', 'osteo' );
     else :
-        _e( 'Archives', 'messenger_pigeons' );
+        _e( 'Archives', 'osteo' );
     endif;
 }
 

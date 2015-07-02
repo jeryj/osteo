@@ -94,8 +94,8 @@ add_image_size('gallery-small', 0, 300, true);
 
 function photoswipe_scripts_method() {
     if(is_singular()) {
-        wp_enqueue_script( 'messenger_pigeons-photoswipe', get_template_directory_uri() . '/js/photoswipe/photoswipe.min.js', array(), '20130115', true );
-        wp_enqueue_script( 'messenger_pigeons-photoswipe-ui', get_template_directory_uri() . '/js/photoswipe/photoswipe-ui-default.min.js', array(), '20130115', true );
+        wp_enqueue_script( 'osteo-photoswipe', get_template_directory_uri() . '/js/photoswipe/photoswipe.min.js', array(), '20130115', true );
+        wp_enqueue_script( 'osteo-photoswipe-ui', get_template_directory_uri() . '/js/photoswipe/photoswipe-ui-default.min.js', array(), '20130115', true );
         wp_enqueue_script( 'photoswipe-gallery',        get_template_directory_uri() . '/js/photoswipe/photoswipe-init.js', array( 'jquery' ));
     }
 }

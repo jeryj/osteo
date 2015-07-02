@@ -1,6 +1,6 @@
 <?php
 /**
- * @package messenger_pigeons
+ * @package osteo
  */
 ?>
 
@@ -10,7 +10,7 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php messenger_pigeons_posted_on(); ?>
+			<?php osteo_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -24,7 +24,7 @@
 		<?php the_excerpt(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'messenger_pigeons' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'osteo' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -35,29 +35,29 @@
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'messenger_pigeons' ) );
-				if ( $categories_list && messenger_pigeons_categorized_blog() ) :
+				$categories_list = get_the_category_list( __( ', ', 'osteo' ) );
+				if ( $categories_list && osteo_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', 'messenger_pigeons' ), $categories_list ); ?>
+				<?php printf( __( 'Posted in %1$s', 'osteo' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
 
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'messenger_pigeons' ) );
+				$tags_list = get_the_tag_list( '', __( ', ', 'osteo' ) );
 				if ( $tags_list ) :
 			?>
 			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', 'messenger_pigeons' ), $tags_list ); ?>
+				<?php printf( __( 'Tagged %1$s', 'osteo' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'messenger_pigeons' ), __( '1 Comment', 'messenger_pigeons' ), __( '% Comments', 'messenger_pigeons' ) ); ?></span>
+		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'osteo' ), __( '1 Comment', 'osteo' ), __( '% Comments', 'osteo' ) ); ?></span>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', 'messenger_pigeons' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'osteo' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

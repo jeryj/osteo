@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package messenger_pigeons
+ * @package osteo
  */
 
 get_header(); ?>
@@ -13,7 +13,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php messenger_pigeons_content_nav( 'nav-below' ); ?>
+			<?php osteo_content_nav( 'nav-below' ); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template
@@ -26,6 +26,6 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	
+
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

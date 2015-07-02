@@ -64,7 +64,7 @@
         bottom: 100%;
         right: 0;
         left: 0;
-        padding: 20px 2em;
+        padding: 1.25em 2em;
         font-size: 1.2em;
         z-index: -1;
         background: #fff;
@@ -78,19 +78,32 @@
         }
 
         li {
-            padding: 4px 0 4px 10px;
-            border-left: 10px solid $black;
+            padding: .1825em 0 .1825em .625em;
+            border-left: 3px solid $black;
 
+            &.current-menu-parent,
             &.active-bars {
-                border-left: 10px solid $blue;
+                border-left: 3px solid $blue;
 
                 a {
                     color: $black;
                 }
             }
 
+            &.current-menu-item {
+                a {
+                    color: $blue;
+                }
+
+
+                // we have to override color if it's in the sub-menu
+                .sub-menu a {
+                    color: $black;
+                }
+            }
+
             ul li {
-                padding-left: 20px;
+                padding-left: 1.25em;
                 border-left: none;
                 font-size: .9em;
 
@@ -107,14 +120,14 @@
 
 
     // http://codepen.io/husnimun/pen/pJvEeL
-    $bar-width: 24px;
-    $bar-height: 3px;
-    $bar-spacing: 6px;
+    $bar-width: 1.5em;
+    $bar-height: .125em;
+    $bar-spacing: .425em;
 
     .menu-toggle {
-        position: fixed;
-        top: 18px;
-        right: 15px;
+        position: absolute;
+        top: 1.25em;
+        right: 1em;
         width: $bar-width;
         height: $bar-height + $bar-spacing*2;
         cursor: pointer;
@@ -173,18 +186,18 @@
 
 @include tablet-only {
     .main-navigation {
-        padding: 30px 20%;
+        padding: 2em 20%;
 
         ul {
-            padding-left: 20px;
+            padding-left: 1.25em;
         }
 
     }
 
     .menu-toggle {
-        position: fixed;
-        top: 20px;
-        right: 20px;
+        position: absolute;
+        top: 1.25em;
+        right: 1.25em;
     }
 }
 
@@ -195,9 +208,9 @@
 
             li {
                 float: left;
-                padding: 6px 20px;
+                padding: .375em 1.25em .375em;
                 position: relative;
-                top: 12px;
+                top: .675em;
 
                 &.active-bars {
                    // border-bottom: 1px solid $red;
@@ -236,7 +249,7 @@
                     left: 0px;
                     width: 200px;
                     background: $light_gray;
-                    margin-top: 6px;
+                    margin-top: .375em;
                     text-align: left;
 
                     &.active {

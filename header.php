@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package messenger_pigeons
+ * @package osteo
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -54,7 +54,7 @@ if(!empty($og_img_src)) : ?>
             <div class="bar"></div>
         </div>
         <nav id="site-navigation" class="main-navigation" role="navigation">
-            <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'messenger_pigeons' ); ?>"><?php _e( 'Skip to content', 'messenger_pigeons' ); ?></a></div>
+            <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'osteo' ); ?>"><?php _e( 'Skip to content', 'osteo' ); ?></a></div>
             <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu-wrap' ) ); ?>
         </nav><!-- #site-navigation -->
     </div>

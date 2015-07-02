@@ -4,7 +4,7 @@
  *
  * A Template for when you don't want to show the title of the page.
  *
- * @package messenger_pigeons
+ * @package osteo
  */
 
 get_header(); ?>

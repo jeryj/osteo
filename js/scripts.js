@@ -90,12 +90,10 @@ jQuery( document ).ready( function( $ ) {
 
 
             // check if we're in the submenu or top level
-            if(currentItem.hasClass('menu-item-has-children')) {
-                itemOrParent = 'item';
-                // $('.current-menu-item').addClass('active-bars');
-            } else {
+            if(currentItem.parent().hasClass('sub-menu')) {
                 itemOrParent = 'parent';
-                // $('.current-menu-parent').addClass('active-bars');
+            } else {
+                itemOrParent = 'item';
             }
             // add the active bars class to the item or parent
             $('.current-menu-'+itemOrParent).addClass('active-bars');
@@ -194,26 +192,4 @@ jQuery( document ).ready( function( $ ) {
         }
     });
 
-
-    // headroom.js for header
-    // grab an element
-    $("#masthead").headroom({
-                                offset: 0,
-                                tolerance : 10,
-                                // hide menu options on unpin
-                                onUnpin : function() { unPinHeader(); },
-                            });
-
-    function unPinHeader() {
-        if($('body').hasClass('desktop')) {
-            // close the menu
-            $('.main-navigation li.active .close-submenu').trigger('tap');
-        } else {
-            if($('.main-navigation').hasClass('toggled')) {
-                //if nav is open, trigger click to close it
-                $('.menu-toggle').trigger('tap');
-            }
-
-        }
-    }
 });
