@@ -255,6 +255,27 @@ function contactInfo() {
     return $contact_info;
 }
 
+function social_icons() {
+    // Social Media
+    $social_facebook = get_option('social_facebook');
+    $social_twitter = get_option('social_twitter');
+    $social_googleplus = get_option('social_googleplus');
+    $social_linkedin = get_option('social_linkedin');
+    // $social_instagram = get_option('social_instagram');
+    // $social_pinterest = get_option('social_pinterest');
+
+    if(!empty($social_pinterest ) || !empty($social_instagram) || !empty($social_facebook) || !empty($social_twitter) || !empty($social_googleplus) || !empty($social_linkedin)) {
+        echo '<ul class="social-icons">'
+                //.(!empty($social_instagram ) ? '<li><a href="'.$social_instagram.'"><i class="icon-instagram instagram"></i><div class="screen-reader-text">Instagram</div></a></li>' : '')
+                .(!empty($social_facebook ) ? '<li><a href="'.$social_facebook.'"><i class="icon-facebook facebook"></i><div class="screen-reader-text">Facebook</div></a></li>' : '')
+                .(!empty($social_twitter ) ? '<li><a href="'.$social_twitter.'"><i class="icon-twitter twitter"></i><div class="screen-reader-text">Twitter</div></a></li>' : '')
+                .(!empty($social_googleplus ) ? '<li><a href="'.$social_googleplus.'"><i class="icon-google-plus"></i><div class="screen-reader-text">Google Plus</div></a></li>' : '')
+                .(!empty($social_linkedin ) ? '<li><a href="'.$social_linkedin.'"><i class="icon-linkedin linkedin"></i><div class="screen-reader-text">Linkedin</div></a></li>' : '')
+                //.(!empty($social_pinterest ) ? '<li><a href="'.$social_pinterest.'"><i class="icon-pinterest pinterest"></i><div class="screen-reader-text">Pinterest</div></a></li>' : '')
+            .'</ul>';
+    }
+}
+
 
 function new_excerpt_more($more) {
     global $post;

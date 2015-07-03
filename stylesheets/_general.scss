@@ -209,3 +209,18 @@
     }
 
 }
+
+%social-icons,
+.social-icons {
+    @extend %no-style;
+    font-size: 1.4em;
+
+    li {
+        display: inline-block;
+        margin-right: .8em;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

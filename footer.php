@@ -55,19 +55,7 @@
 			<div id="footer-2" class="widget-area center" role="complementary">
 				<?php
 					dynamic_sidebar( 'footer-2' );
-					// Social Media
-					$social_facebook = get_option('social_facebook');
-					$social_twitter = get_option('social_twitter');
-					$social_googleplus = get_option('social_googleplus');
-					$social_linkedin = get_option('social_linkedin');
-					if(!empty($social_facebook) || !empty($social_twitter) || !empty($social_googleplus) || !empty($social_linkedin)) {
-						echo '<ul class="social-icons">'
-								.(!empty($social_facebook ) ? '<li><a href="'.$social_facebook.'"><i class="fa-facebook"></i></a></li>' : '')
-								.(!empty($social_twitter ) ? '<li><a href="'.$social_twitter.'"><i class="fa-twitter"></i></a></li>' : '')
-								.(!empty($social_googleplus ) ? '<li><a href="'.$social_googleplus.'"><i class="fa-google-plus"></i></a></li>' : '')
-								.(!empty($social_linkedin ) ? '<li><a href="'.$social_linkedin.'"><i class="fa-linkedin"></i></a></li>' : '')
-							.'</ul>';
-					}
+					social_icons();
 				?>
 			</div>
 			<div id="footer-3" class="widget-area" role="complementary">
