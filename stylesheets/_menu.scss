@@ -38,7 +38,7 @@
             overflow: hidden;
             margin-bottom: 0;
             border: none;
-            @include transition(height .5s);
+            transition: height .5s;
         }
     }
 
@@ -68,7 +68,7 @@
         font-size: 1.2em;
         z-index: -1;
         background: #fff;
-        @include transition(all .5s);
+        transition: all .5s;
         border-bottom: 1px solid $gray;
 
         &.toggled {
@@ -221,7 +221,7 @@
                 }
 
                 &.active {
-                    @include transition(all .5s);
+                    transition: all .5s;
                     .close-submenu {
                         opacity: 1;
                         top: -7px;
@@ -236,7 +236,7 @@
                     left: -3px;
                     color: $gray;
                     z-index: -1;
-                    @include transition(all .4s);
+                    transition: all .4s;
 
                     &:hover {
                         color: $red;

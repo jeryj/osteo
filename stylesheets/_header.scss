@@ -1,12 +1,12 @@
 #masthead {
     background: $white;
     border-bottom: 1px solid $gray;
-    @include transition(border-bottom 4s);
+    transition: border-bottom 4s;
 
     .logo {
         font-size: 2em;
         margin-right: 30px;
-        @include transition(all 400ms);
+        transition: all 400ms;
 
         @include everything-but-desktop {
             text-align: center;
