@@ -38,18 +38,6 @@
 			<div id="footer-1" class="widget-area center" role="complementary">
 				<?php
 					dynamic_sidebar( 'footer-1' );
-
-					$phone_number = get_option('phone_number');
-					$footer_contact_title = get_option('footer_contact_title');
-					$footer_contact_image = get_option('footer_contact_image');
-					echo (!empty($footer_contact_title) ? '<h3>'.$footer_contact_title.'</h3>' : '');
-					if (!empty($footer_contact_image)) {
-						$footer_img = wp_get_attachment_image_src( $footer_contact_image, 'thumbnail' );
-						if($footer_img) {
-							echo '<p><img class="circle" src="'.$footer_img[0].'"/></p>';
-						}
-					}
-					// echo '<p><a class="btn btn-large" href="'.get_bloginfo("url").'/contact">Contact</a>'.(!empty($phone_number) ? '<br /><br/><i class="icon-phonelight"></i> '.$phone_number : '').'</p>';
 				?>
 			</div>
 			<div id="footer-2" class="widget-area center" role="complementary">

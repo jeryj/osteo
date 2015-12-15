@@ -134,13 +134,7 @@ function osteo_scripts() {
 		wp_enqueue_script( 'osteo-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 
-	/* Disable Pre-loaded Jquery from Worpdress and use Google instead.
-	If Developing without internet, comment out this section */
-	if( !is_admin()){
-		wp_deregister_script('jquery');
-		wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"), false, '1.11.2');
-		wp_enqueue_script('jquery');
-	}
+	wp_enqueue_script('jquery');
 }
 add_action( 'wp_enqueue_scripts', 'osteo_scripts' );
 
